@@ -1,8 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-vercel-domain.vercel.app"), // ← CHANGE THIS
+  metadataBase: new URL("https://premium-portfolio-77kingo.vercel.app"), // ← replace with your real domain
 
   title: {
     default: "Saurav Singh | Full Stack Developer",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
     title: "Saurav Singh Portfolio",
     description:
       "Full Stack Developer Portfolio with modern web projects and experience.",
-    url: "https://your-vercel-domain.vercel.app",
+    url: "https://premium-portfolio-77kingo.vercel.app",
     siteName: "Saurav Singh Portfolio",
     images: [
       {
@@ -32,8 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Saurav Singh Portfolio",
-    description:
-      "Modern Full Stack Developer Portfolio",
+    description: "Modern Full Stack Developer Portfolio",
     images: ["/og-image.png"],
   },
 
@@ -42,3 +42,15 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
